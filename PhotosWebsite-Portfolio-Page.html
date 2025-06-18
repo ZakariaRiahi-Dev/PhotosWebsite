@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="PhotosWebsite.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <title>Photos Website</title>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Mr. Springett</div>
+    <nav class="nav-links" id="navLinks">
+      <a href="PhotosWebsite.html">Home</a>
+      <a href="PhotosWebsite-Gallery-Page.html">Gallery</a>
+      <a href="PhotosWebsite-Portfolio-Page.html">Portfolio</a>
+      <a href="PhotosWebsite-About-Page.html">About</a>
+      
+      <!-- Replace Search <a> with a button -->
+      <button class="search-toggle">Search</button>
+      <div class="search-container">
+        <div class="search-icon-input">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search Some Cool Photos..." />
+          <button class="search-btn">Search</button>
+        </div>
+      </div>
+    </nav>
+
+    <button class="nav-btn1">Contact</button>
+    <button class="nav-btn2" onclick="window.location.href='PhotosWebsite-Login-Page.html'">
+      Sign In / Sign Up
+    </button>
+  </header>
+
+  <script src="PhotosWebsite.js"></script>
+  <script>
+    const searchToggle = document.querySelector('.search-toggle');
+    const searchContainer = document.querySelector('.search-container');
+
+    searchToggle.addEventListener('click', () => {
+      searchContainer.classList.toggle('show');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!searchToggle.contains(e.target) && !searchContainer.contains(e.target)) {
+        searchContainer.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>
